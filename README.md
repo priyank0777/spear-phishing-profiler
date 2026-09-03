@@ -1,23 +1,26 @@
-<div align="center">
 # 🛡️ Spear-Phishing & Social Engineering Profiler
 ### *AI-Assisted Human Attack Surface & Social Engineering Defense Auditor*
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/)
 [![Framework](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%2F%20NIST%20CSF-orange.svg?style=for-the-badge)](https://attack.mitre.org/)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge)](https://github.com/psf/black)
-<p align="center">
-  <b>A comprehensive defensive OSINT reconnaissance, human risk profiling, and anti-spoofing platform.</b><br>
-  Computes an enterprise <b>Social Engineering Risk Index (SERI)</b>, models department pretexting susceptibility, and generates CISO-grade remediation playbooks.
-</p>
-[Key Features](#-key-features) • [Architecture](#-architecture) • [Scoring Methodology](#-seri-scoring-methodology) • [Quickstart](#-quickstart) • [Web Operations Center](#-interactive-web-operations-center) • [CLI Scanner](#-terminal-cli-scanner) • [Defensive Ethics](#-ethics--defensive-use-statement)
+
+A comprehensive defensive OSINT reconnaissance, human risk profiling, and anti-spoofing platform. Computes an enterprise **Social Engineering Risk Index (SERI)**, models department pretexting susceptibility, and generates CISO-grade remediation playbooks.
+
 ---
-</div>
+
 ## 📌 Overview
+
 Traditional cybersecurity solutions guard endpoints and network perimeters, yet **over 80% of enterprise security breaches originate through human deception**—spear-phishing, Business Email Compromise (BEC), OAuth consent phishing, and MFA push fatigue.
+
 The **Spear-Phishing & Social Engineering Profiler** bridges the gap between external OSINT signals and internal human risk. By non-intrusively gathering public DNS posture, evaluating email spoofability (SPF/DMARC), identifying exposed SaaS platforms, and mapping departmental privilege hierarchies, it quantifies an organization's susceptibility to social engineering before adversaries can exploit it.
+
 ---
+
 ## ⚡ Key Features
+
 | Capability | Technical Scope & Defensive Impact |
 | :--- | :--- |
 | **🌐 Passive OSINT & Anti-Spoofing** | Evaluates **DMARC** (`p=none`, `quarantine`, `reject`) and **SPF** (`-all`, `~all`, `?all`) to detect whether attackers can forge official emails directly into victim inboxes. |
@@ -27,9 +30,8 @@ The **Spear-Phishing & Social Engineering Profiler** bridges the gap between ext
 | **🤖 Dual AI Engine** | Operates with a **built-in deterministic intelligence engine** (100% offline, zero-latency) with optional support for **Gemini 1.5 Flash** for generative reasoning. |
 | **🛡️ CISO Remediation Playbooks** | Generates prioritized technical controls, governance policies (e.g. Out-of-Band wire verification), and a 30-60-90 day remediation roadmap. |
 | **📄 Publication-Ready Reports** | Exports comprehensive audit briefs in **Markdown (`.md`)** and modern cyber-styled **HTML (`.html`)**. |
+
 ---
-
-
 ## 📁 Project Architecture
 
 ```
