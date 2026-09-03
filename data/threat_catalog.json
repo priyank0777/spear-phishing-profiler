@@ -1,0 +1,81 @@
+{
+  "threat_vectors": [
+    {
+      "id": "VEC-BEC-01",
+      "name": "Business Email Compromise (BEC) & Executive Impersonation",
+      "mitre_id": "T1566.002",
+      "target_departments": ["Finance & Accounting", "Executive & C-Suite"],
+      "psychological_triggers": ["Authority", "Urgency", "Confidentiality"],
+      "attack_anatomy": "Attacker mimics CEO or executive email via lookalike domain or direct spoofing (if DMARC is weak). Requests an urgent confidential wire transfer or vendor bank account update.",
+      "severity": "CRITICAL",
+      "defensive_countermeasure": "Implement mandatory Out-of-Band (OOB) dual verification for wire transfers > $5,000, enforce DMARC p=reject, and apply external sender warning banners."
+    },
+    {
+      "id": "VEC-OAUTH-02",
+      "name": "OAuth Consent Grant Phishing (Illicit App Grant)",
+      "mitre_id": "T1566.003",
+      "target_departments": ["IT & DevOps / Security", "Executive & C-Suite", "General / Operations"],
+      "psychological_triggers": ["Familiarity", "Convenience", "Compliance"],
+      "attack_anatomy": "Lures user to grant permissions to a seemingly benign third-party application (e.g., 'Document Viewer' or 'Zoom Add-in') which silently gains full read/write API access to emails, files, and directory data without needing passwords or triggering MFA.",
+      "severity": "CRITICAL",
+      "defensive_countermeasure": "Disable unverified third-party app consent in Microsoft Entra / Google Workspace; require IT admin approval workflows for all OAuth app permissions."
+    },
+    {
+      "id": "VEC-MFA-03",
+      "name": "MFA Fatigue & Push Notification Bombing",
+      "mitre_id": "T1078",
+      "target_departments": ["IT & DevOps / Security", "Executive & C-Suite"],
+      "psychological_triggers": ["Annoyance", "Cognitive Overload", "Urgency"],
+      "attack_anatomy": "Attacker acquires valid primary credentials and bombards target with repeated MFA push notifications late at night or follows up with an impersonated IT helpdesk call to convince the user to approve the notification.",
+      "severity": "HIGH",
+      "defensive_countermeasure": "Upgrade MFA from simple push notifications to FIDO2 / WebAuthn hardware security keys or enforce Number Matching and geolocation context on push prompts."
+    },
+    {
+      "id": "VEC-ATTACH-04",
+      "name": "Weaponized Resume / Portfolio Attachment Pretext",
+      "mitre_id": "T1566.001",
+      "target_departments": ["Human Resources & Recruiting"],
+      "psychological_triggers": ["Curiosity", "Job Obligation", "Fear of Missing Talent"],
+      "attack_anatomy": "Attacker submits a fake job application containing a weaponized document (e.g. PDF with embedded links, macro-enabled Word doc, or password-protected archive with LNK loader) requesting immediate review.",
+      "severity": "HIGH",
+      "defensive_countermeasure": "Enforce isolated browser/sandbox previewing for recruitment attachments, block encrypted archives from untrusted domains, and train recruiters to only accept links through official ATS portals."
+    },
+    {
+      "id": "VEC-VPN-05",
+      "name": "Remote Access / VPN Gateway Credential Harvester",
+      "mitre_id": "T1566.002",
+      "target_departments": ["IT & DevOps / Security", "Customer Support & Sales", "General / Operations"],
+      "psychological_triggers": ["Fear of Service Interruption", "Technical Authority", "Urgency"],
+      "attack_anatomy": "Sends spoofed IT maintenance alert stating: 'Your VPN client is out of compliance. Click here to verify credentials and update certificates', routing to an Adversary-in-the-Middle (AitM) proxy cloning the corporate login page.",
+      "severity": "HIGH",
+      "defensive_countermeasure": "Implement FIDO2 WebAuthn (phishing-resistant MFA), enforce Conditional Access device compliance checks, and restrict VPN portal access to managed assets."
+    },
+    {
+      "id": "VEC-INVOICE-06",
+      "name": "Fraudulent Vendor Banking Details Alteration",
+      "mitre_id": "T1566.002",
+      "target_departments": ["Finance & Accounting"],
+      "psychological_triggers": ["Familiarity", "Routine Task Compliance", "Urgency"],
+      "attack_anatomy": "Adversary gains visibility into pending supply orders or imitates a known supplier, sending an updated invoice with 'new bank routing details due to an annual bank audit'.",
+      "severity": "CRITICAL",
+      "defensive_countermeasure": "Enforce verbal phone callback to the pre-existing verified supplier contact number prior to changing any bank disbursement details in ERP systems."
+    },
+    {
+      "id": "VEC-LEGAL-07",
+      "name": "Subpoena / DMCA Copyright Infringement Intimidation",
+      "mitre_id": "T1598",
+      "target_departments": ["Legal & Compliance", "Executive & C-Suite", "Customer Support & Sales"],
+      "psychological_triggers": ["Legal Intimidation", "Fear of Lawsuit", "Urgency"],
+      "attack_anatomy": "Sends urgent legal notice alleging copyright violation or impending subpoena with an encrypted link to 'view the alleged infringed media proof', delivering infostealer malware.",
+      "severity": "MEDIUM",
+      "defensive_countermeasure": "Centralize all legal notices through a dedicated verification queue; enforce endpoint CDR (Content Disarm and Reconstruction) on inbound archive downloads."
+    }
+  ],
+  "psychological_principles": {
+    "Authority": "Targets obey commands when perceived to come from C-level executives, legal counsel, or senior IT leadership.",
+    "Urgency": "Compresses decision-making time ('must complete wire transfer before 5 PM wire cutoff'), bypassing critical rational checks.",
+    "Curiosity / Obligation": "Leverages professional duty (e.g. HR reviewing applicants, sales evaluating high-value inbound leads).",
+    "Familiarity / Liking": "Mimics known vendors, internal colleagues, or common corporate SaaS tools (Microsoft 365, Slack).",
+    "Fear of Non-Compliance": "Threatens account suspension, regulatory penalty, or lost business."
+  }
+}

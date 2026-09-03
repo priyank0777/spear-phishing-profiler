@@ -1,0 +1,141 @@
+{
+  "ApexFintech": {
+    "name": "Apex Global Fintech",
+    "domain": "apex-fintech-demo.com",
+    "industry": "Financial Services & Banking",
+    "employee_count": 850,
+    "email_format": "{first}.{last}@apex-fintech-demo.com",
+    "dns_posture": {
+      "dmarc_policy": "none",
+      "spf_qualifier": "softfail",
+      "mx_hosts": ["mx1.apex-fintech-demo.com", "mail.protection.outlook.com"],
+      "has_txt_verification": true
+    },
+    "tech_stack": ["Microsoft 365", "Okta / Identity Provider", "Salesforce", "Remote Access / VPN"],
+    "departments": [
+      {
+        "name": "Executive & C-Suite",
+        "headcount": 8,
+        "sample_roles": ["Chief Executive Officer", "Chief Financial Officer", "Chief Operating Officer"],
+        "public_exposure": "HIGH",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "Finance & Accounting",
+        "headcount": 24,
+        "sample_roles": ["VP of Finance", "Senior Treasury Analyst", "Accounts Payable Lead", "Payroll Manager"],
+        "public_exposure": "HIGH",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "IT & DevOps / Security",
+        "headcount": 35,
+        "sample_roles": ["Principal Cloud Architect", "SRE Lead", "IT Systems Administrator"],
+        "public_exposure": "MEDIUM",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "Human Resources & Recruiting",
+        "headcount": 18,
+        "sample_roles": ["Head of People", "Senior Technical Recruiter", "HR Operations Partner"],
+        "public_exposure": "HIGH",
+        "privilege_level": "MEDIUM"
+      },
+      {
+        "name": "Customer Support & Sales",
+        "headcount": 120,
+        "sample_roles": ["Enterprise Account Executive", "Client Success Specialist"],
+        "public_exposure": "HIGH",
+        "privilege_level": "MEDIUM"
+      }
+    ]
+  },
+  "CloudScaleAI": {
+    "name": "CloudScale AI Labs",
+    "domain": "cloudscale-ai-test.io",
+    "industry": "Enterprise Cloud Software & AI",
+    "employee_count": 340,
+    "email_format": "{f}{last}@cloudscale-ai-test.io",
+    "dns_posture": {
+      "dmarc_policy": "quarantine",
+      "spf_qualifier": "hardfail",
+      "mx_hosts": ["aspmx.l.google.com", "alt1.aspmx.l.google.com"],
+      "has_txt_verification": true
+    },
+    "tech_stack": ["Google Workspace", "Slack", "Atlassian / Jira"],
+    "departments": [
+      {
+        "name": "Executive & C-Suite",
+        "headcount": 5,
+        "sample_roles": ["Co-Founder & CEO", "CTO"],
+        "public_exposure": "HIGH",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "IT & DevOps / Security",
+        "headcount": 45,
+        "sample_roles": ["DevOps Lead", "Infrastructure Engineer", "Security Operations Analyst"],
+        "public_exposure": "HIGH",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "Finance & Accounting",
+        "headcount": 8,
+        "sample_roles": ["Finance Director", "Senior Accountant"],
+        "public_exposure": "MEDIUM",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "Human Resources & Recruiting",
+        "headcount": 12,
+        "sample_roles": ["Talent Acquisition Partner", "HR Generalist"],
+        "public_exposure": "HIGH",
+        "privilege_level": "MEDIUM"
+      }
+    ]
+  },
+  "BioCareHealth": {
+    "name": "BioCare Health Systems",
+    "domain": "biocare-health-sample.org",
+    "industry": "Healthcare & Pharmaceuticals",
+    "employee_count": 2200,
+    "email_format": "{first}_{last}@biocare-health-sample.org",
+    "dns_posture": {
+      "dmarc_policy": "missing",
+      "spf_qualifier": "neutral",
+      "mx_hosts": ["mail.biocare-health-sample.org"],
+      "has_txt_verification": false
+    },
+    "tech_stack": ["Microsoft 365", "Remote Access / VPN"],
+    "departments": [
+      {
+        "name": "Executive & C-Suite",
+        "headcount": 12,
+        "sample_roles": ["Chief Medical Officer", "Chief Financial Officer"],
+        "public_exposure": "HIGH",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "Finance & Accounting",
+        "headcount": 65,
+        "sample_roles": ["Hospital Billing Lead", "Patient Accounts Director"],
+        "public_exposure": "HIGH",
+        "privilege_level": "CRITICAL"
+      },
+      {
+        "name": "Human Resources & Recruiting",
+        "headcount": 30,
+        "sample_roles": ["Clinical Recruiter", "Staffing Coordinator"],
+        "public_exposure": "HIGH",
+        "privilege_level": "MEDIUM"
+      },
+      {
+        "name": "IT & DevOps / Security",
+        "headcount": 40,
+        "sample_roles": ["Clinical Systems Administrator", "EHR Tech Lead"],
+        "public_exposure": "LOW",
+        "privilege_level": "CRITICAL"
+      }
+    ]
+  }
+}
