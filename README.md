@@ -1,42 +1,34 @@
+<div align="center">
 # 🛡️ Spear-Phishing & Social Engineering Profiler
-
-An AI-assisted defensive cybersecurity reconnaissance and human attack surface auditing tool. This system evaluates an organization's public domain defenses (SPF, DMARC, MX), models department-level exposure, calculates a composite **Social Engineering Risk Index (SERI)**, and synthesizes behavioral pretexting vulnerabilities and CISO remediation playbooks.
-
-Aligned with **MITRE ATT&CK for Enterprise** (T1566, T1598, T1078) and the **NIST Cybersecurity Framework (CSF)**.
-
+### *AI-Assisted Human Attack Surface & Social Engineering Defense Auditor*
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/)
+[![Framework](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK%20%2F%20NIST%20CSF-orange.svg?style=for-the-badge)](https://attack.mitre.org/)
+[![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge)](https://github.com/psf/black)
+<p align="center">
+  <b>A comprehensive defensive OSINT reconnaissance, human risk profiling, and anti-spoofing platform.</b><br>
+  Computes an enterprise <b>Social Engineering Risk Index (SERI)</b>, models department pretexting susceptibility, and generates CISO-grade remediation playbooks.
+</p>
+[Key Features](#-key-features) • [Architecture](#-architecture) • [Scoring Methodology](#-seri-scoring-methodology) • [Quickstart](#-quickstart) • [Web Operations Center](#-interactive-web-operations-center) • [CLI Scanner](#-terminal-cli-scanner) • [Defensive Ethics](#-ethics--defensive-use-statement)
+---
+</div>
+## 📌 Overview
+Traditional cybersecurity solutions guard endpoints and network perimeters, yet **over 80% of enterprise security breaches originate through human deception**—spear-phishing, Business Email Compromise (BEC), OAuth consent phishing, and MFA push fatigue.
+The **Spear-Phishing & Social Engineering Profiler** bridges the gap between external OSINT signals and internal human risk. By non-intrusively gathering public DNS posture, evaluating email spoofability (SPF/DMARC), identifying exposed SaaS platforms, and mapping departmental privilege hierarchies, it quantifies an organization's susceptibility to social engineering before adversaries can exploit it.
+---
+## ⚡ Key Features
+| Capability | Technical Scope & Defensive Impact |
+| :--- | :--- |
+| **🌐 Passive OSINT & Anti-Spoofing** | Evaluates **DMARC** (`p=none`, `quarantine`, `reject`) and **SPF** (`-all`, `~all`, `?all`) to detect whether attackers can forge official emails directly into victim inboxes. |
+| **☁️ SaaS Footprint Detection** | Passively uncovers exposed cloud identities & tools (Microsoft 365, Google Workspace, Okta IdP, Jira, Slack, Salesforce, VPN portals). |
+| **👥 Human Attack Surface Modeling** | Categorizes risk across departments (Execs, Finance, IT/DevOps, HR, Sales, Legal) based on access privileges and public OSINT visibility. |
+| **🧠 Behavioral & Pretexting Engine** | Synthesizes department-tailored spear-phishing scenarios, identifying cognitive vulnerabilities (**Authority Bias, Urgency, Obligation**) and defensive detection indicators. |
+| **🤖 Dual AI Engine** | Operates with a **built-in deterministic intelligence engine** (100% offline, zero-latency) with optional support for **Gemini 1.5 Flash** for generative reasoning. |
+| **🛡️ CISO Remediation Playbooks** | Generates prioritized technical controls, governance policies (e.g. Out-of-Band wire verification), and a 30-60-90 day remediation roadmap. |
+| **📄 Publication-Ready Reports** | Exports comprehensive audit briefs in **Markdown (`.md`)** and modern cyber-styled **HTML (`.html`)**. |
 ---
 
-## 🚀 Key Capabilities
-
-1. **Passive OSINT & Anti-Spoofing Audit**:
-   - Queries and inspects DNS records for **DMARC** (`p=none`, `quarantine`, `reject`) and **SPF** (`-all`, `~all`, `?all`).
-   - Flags domain spoofability and direct email impersonation risk.
-   - Detects SaaS and Identity Provider footprints (Microsoft 365, Google Workspace, Okta, Jira, Slack, VPN endpoints).
-   - Infers corporate email naming schemes (`{first}.{last}`, `{f}{last}`, etc.).
-
-2. **Human Attack Surface Modeling**:
-   - Deconstructs organizations across high-value departments (Executive & C-Suite, Finance, IT & DevOps, HR & Recruiting, Sales/Support).
-   - Correlates privilege levels with public OSINT visibility.
-
-3. **Social Engineering Risk Index (SERI)**:
-   - Evaluates composite organizational vulnerability on a 0 - 100 scale:
-     $$\text{SERI} = 0.35 \times \text{DomainSpoofRisk} + 0.40 \times \text{HumanAttackSurfaceRisk} + 0.25 \times \text{TechStackRisk}$$
-   - Maps scores into clear risk tiers: `LOW` (0-30), `MODERATE` (31-60), `ELEVATED` (61-80), `CRITICAL` (81-100).
-
-4. **AI Behavioral & Pretexting Engine**:
-   - Analyzes psychological vulnerability triggers (Authority Bias, Artificial Urgency, Job Obligation, Familiarity).
-   - Maps plausible attack scenarios (BEC, illicit OAuth consent grants, MFA push bombing, weaponized resume attachments) and highlights cognitive blindspots and defensive indicators.
-   - Dual-engine architecture: Built-in deterministic expert engine + optional Gemini 1.5 Flash generative reasoning.
-
-5. **CISO Remediation & Training Playbooks**:
-   - Prioritized technical controls (DMARC `p=reject` roadmap, FIDO2/WebAuthn passkey enforcement, external email banners).
-   - Procedural governance (Out-of-Band dual authorization for wire transfers, HR ATS document sandbox).
-   - Department-specific micro-learning drills and 30-60-90 day implementation roadmaps.
-
-6. **Executive Reporting**:
-   - Generates publication-ready Markdown briefs and standalone styled HTML reports.
-
----
 
 ## 📁 Project Architecture
 
